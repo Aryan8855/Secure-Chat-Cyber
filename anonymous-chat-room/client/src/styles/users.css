@@ -1,0 +1,97 @@
+/* Cyberpunk Users Panel */
+.online-users {
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid #00ff41;
+  border-radius: 0;
+  padding: 20px;
+  margin-bottom: 20px;
+  backdrop-filter: blur(10px);
+  position: relative;
+  overflow: hidden;
+}
+
+.users-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  color: #00ff41;
+  font-weight: bold;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  border-bottom: 1px solid #00ff41;
+  padding-bottom: 10px;
+  text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+}
+
+.users-header::before {
+  content: '⟠';
+  font-size: 1.2rem;
+}
+
+.users-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.user-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 15px;
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #008f39;
+  border-radius: 0;
+  color: #e0e0e0;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.user-item::before {
+  content: '■';
+  position: absolute;
+  left: 5px;
+  color: #00ff41;
+  font-size: 0.8rem;
+}
+
+.user-item:hover {
+  background: rgba(0, 255, 65, 0.1);
+  border-color: #00ff41;
+  transform: translateX(5px);
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+}
+
+.status-dot {
+  width: 10px;
+  height: 10px;
+  background: #00ff41;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff41;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.user-info {
+  flex: 1;
+  margin-left: 15px;
+}
+
+.user-name {
+  font-weight: 600;
+  color: #00ff41;
+  font-family: 'Courier New', monospace;
+}
+
+.user-status {
+  font-size: 0.75rem;
+  color: #008f39;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}

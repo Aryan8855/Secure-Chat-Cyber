@@ -1,0 +1,184 @@
+.message-input-container {
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.9);
+  border-top: 1px solid #00ff00;
+}
+
+.message-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-wrapper {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.message-textarea {
+  flex: 1;
+  background: rgba(5, 5, 5, 0.8);
+  border: 1px solid #00ff00;
+  border-radius: 8px;
+  padding: 12px 15px;
+  color: #ffffff;
+  font-family: 'Courier New', monospace;
+  font-size: 14px;
+  resize: none;
+  min-height: 44px;
+  max-height: 120px;
+  transition: all 0.3s ease;
+}
+
+.message-textarea:focus {
+  outline: none;
+  border-color: #00ffff;
+  box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+}
+
+.message-textarea:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.message-textarea::placeholder {
+  color: #00ff00;
+  opacity: 0.6;
+}
+
+.input-actions {
+  display: flex;
+  gap: 8px;
+  align-items: flex-end;
+}
+
+.send-button {
+  background: linear-gradient(45deg, #00ff00, #00ffff);
+  border: none;
+  border-radius: 6px;
+  padding: 10px 15px;
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  min-width: 80px;
+  justify-content: center;
+}
+
+.send-button:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.4);
+}
+
+.send-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.send-icon {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.send-text {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.input-status {
+  font-size: 11px;
+  text-align: center;
+  padding: 5px;
+}
+
+.status-connected {
+  color: #00ff00;
+  text-shadow: 0 0 5px #00ff00;
+}
+
+.status-disconnected {
+  color: #ff4444;
+  text-shadow: 0 0 5px #ff4444;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .message-input-container {
+    padding: 15px 10px;
+  }
+  
+  .input-wrapper {
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .input-actions {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .send-button {
+    min-width: 70px;
+    padding: 8px 12px;
+  }
+  
+  .message-textarea {
+    font-size: 13px;
+    padding: 10px 12px;
+
+  }
+
+  .image-upload-button {
+  background: rgba(0, 255, 255, 0.1);
+  border: 1px solid #00ffff;
+  border-radius: 6px;
+  padding: 10px 12px;
+  color: #00ffff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.3s ease;
+  min-width: 80px;
+  justify-content: center;
+}
+
+.image-upload-button:hover:not(:disabled) {
+  background: rgba(0, 255, 255, 0.2);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0, 255, 255, 0.3);
+}
+
+.image-upload-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.upload-icon {
+  font-size: 14px;
+}
+
+.upload-text {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+@media (max-width: 768px) {
+  .image-upload-button {
+    min-width: 70px;
+    padding: 8px 10px;
+  }
+  
+  .upload-text {
+    font-size: 10px;
+  }
+}
+}

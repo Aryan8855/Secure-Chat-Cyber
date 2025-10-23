@@ -1,0 +1,143 @@
+/* Cyberpunk Input Panel */
+.message-input-container {
+  background: rgba(10, 10, 10, 0.8);
+  border: 1px solid #00ff41;
+  border-radius: 0;
+  padding: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.1);
+  position: relative;
+}
+
+.message-input-container::before {
+  content: 'INPUT_TERMINAL';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: #0a0a0a;
+  color: #00ff41;
+  padding: 0 10px;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.message-input {
+  display: flex;
+  gap: 15px;
+  align-items: flex-end;
+}
+
+.message-input input {
+  flex: 1;
+  padding: 15px 20px;
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #008f39;
+  border-radius: 0;
+  color: #00ff41;
+  font-size: 1rem;
+  font-family: 'Courier New', monospace;
+  min-height: 50px;
+  transition: all 0.3s ease;
+}
+
+.message-input input:focus {
+  outline: none;
+  border-color: #00ff41;
+  box-shadow: 0 0 20px rgba(0, 255, 65, 0.3);
+  background: rgba(0, 255, 65, 0.05);
+}
+
+.message-input input::placeholder {
+  color: #008f39;
+  font-style: italic;
+}
+
+.send-button {
+  padding: 15px 25px;
+  background: linear-gradient(135deg, #00ff41 0%, #008f39 100%);
+  color: #0a0a0a;
+  border: none;
+  border-radius: 0;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: 'Courier New', monospace;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  min-width: 100px;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.send-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.5s;
+}
+
+.send-button:hover::before {
+  left: 100%;
+}
+
+.send-button:hover {
+  box-shadow: 0 0 25px rgba(0, 255, 65, 0.5);
+  transform: translateY(-2px);
+}
+
+.media-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 15px;
+  border-top: 1px solid #008f39;
+  padding-top: 15px;
+}
+
+.media-button {
+  padding: 10px 15px;
+  background: rgba(20, 20, 20, 0.9);
+  color: #00ff41;
+  border: 1px solid #008f39;
+  border-radius: 0;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-family: 'Courier New', monospace;
+  transition: all 0.3s ease;
+  flex: 1;
+  text-align: center;
+}
+
+.media-button:hover {
+  background: rgba(0, 255, 65, 0.1);
+  border-color: #00ff41;
+  box-shadow: 0 0 15px rgba(0, 255, 65, 0.2);
+}
+
+.connection-status {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #00ff41;
+  font-size: 0.9rem;
+  margin-top: 15px;
+  padding: 10px;
+  background: rgba(0, 255, 65, 0.05);
+  border: 1px solid #008f39;
+  font-family: 'Courier New', monospace;
+}
+
+.connection-status::before {
+  content: '●';
+  color: #00ff41;
+  animation: blink 1s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0.3; }
+}

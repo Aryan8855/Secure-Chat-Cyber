@@ -1,0 +1,285 @@
+/* Cyberpunk Chat Room with Cyber City Background */
+.chat-room {
+  display: flex;
+  height: 100vh;
+  width: 100vw;
+  background: #000;
+  color: #00ff41;
+  font-family: 'Courier New', 'Monaco', monospace;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Cyber City Background Container */
+.cyber-city-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+  background: linear-gradient(180deg, #000814 0%, #001d3d 30%, #003566 70%, #000814 100%);
+}
+
+/* City Skyline Base */
+.city-skyline {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40%;
+  background: 
+    linear-gradient(90deg, 
+      transparent 0%, 
+      #0a0a0a 10%, 
+      #1a1a1a 20%, 
+      #2a2a2a 30%, 
+      #1a1a1a 40%, 
+      #0a0a0a 50%, 
+      transparent 60%,
+      #0a0a0a 70%,
+      #1a1a1a 80%,
+      #2a2a2a 90%,
+      #0a0a0a 100%
+    );
+}
+
+/* Building Structures */
+.building {
+  position: absolute;
+  bottom: 0;
+  background: linear-gradient(180deg, #0a0a0a 0%, #1a1a1a 100%);
+  border-left: 1px solid #00ff41;
+  border-right: 1px solid #00ff41;
+}
+
+.building-tall {
+  height: 60%;
+  width: 80px;
+}
+
+.building-medium {
+  height: 40%;
+  width: 60px;
+}
+
+.building-short {
+  height: 25%;
+  width: 40px;
+}
+
+/* Building Windows */
+.building-window {
+  position: absolute;
+  width: 4px;
+  height: 8px;
+  background: #00ff41;
+  box-shadow: 0 0 10px #00ff41;
+  animation: windowFlicker 3s infinite;
+}
+
+.building-window.blue {
+  background: #0066ff;
+  box-shadow: 0 0 10px #0066ff;
+}
+
+.building-window.purple {
+  background: #9900ff;
+  box-shadow: 0 0 10px #9900ff;
+}
+
+/* Flying Cars */
+.flying-car {
+  position: absolute;
+  width: 30px;
+  height: 10px;
+  background: linear-gradient(90deg, #ff003c, #ff6600);
+  border-radius: 2px;
+  animation: flyingCar linear infinite;
+  box-shadow: 0 0 20px #ff003c;
+}
+
+.flying-car::before {
+  content: '';
+  position: absolute;
+  top: -3px;
+  left: 5px;
+  width: 4px;
+  height: 4px;
+  background: #00ff41;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff41;
+}
+
+.flying-car::after {
+  content: '';
+  position: absolute;
+  top: -3px;
+  right: 5px;
+  width: 4px;
+  height: 4px;
+  background: #00ff41;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00ff41;
+}
+
+/* Neon Signs */
+.neon-sign {
+  position: absolute;
+  color: #ff003c;
+  font-size: 12px;
+  font-weight: bold;
+  text-shadow: 0 0 10px #ff003c;
+  animation: neonBlink 2s infinite;
+  font-family: 'Courier New', monospace;
+}
+
+.neon-sign.blue {
+  color: #0066ff;
+  text-shadow: 0 0 10px #0066ff;
+}
+
+.neon-sign.green {
+  color: #00ff41;
+  text-shadow: 0 0 10px #00ff41;
+}
+
+/* Rain Effect */
+.rain-drop {
+  position: absolute;
+  width: 1px;
+  height: 15px;
+  background: linear-gradient(transparent, #00ff41, transparent);
+  animation: rainFall linear infinite;
+}
+
+/* Animations */
+@keyframes windowFlicker {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.3; }
+  75% { opacity: 0.7; }
+}
+
+@keyframes flyingCar {
+  0% {
+    transform: translateX(-100px) translateY(100px) rotate(-5deg);
+    opacity: 0;
+  }
+  5% {
+    opacity: 1;
+  }
+  95% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(100vw) translateY(-100px) rotate(5deg);
+    opacity: 0;
+  }
+}
+
+@keyframes neonBlink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+@keyframes rainFall {
+  0% {
+    transform: translateY(-100px);
+    opacity: 0;
+  }
+  10% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Hologram Advertisements */
+.hologram-ad {
+  position: absolute;
+  color: #00ff41;
+  font-size: 10px;
+  text-shadow: 0 0 15px #00ff41;
+  animation: hologramFloat 8s infinite;
+  font-family: 'Courier New', monospace;
+  background: rgba(0, 255, 65, 0.1);
+  padding: 2px 6px;
+  border: 1px solid #00ff41;
+}
+
+@keyframes hologramFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+    opacity: 1;
+  }
+}
+
+.chat-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  gap: 0;
+  padding: 0;
+  margin: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.chat-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  gap: 0;
+  margin: 0;
+  padding: 20px;
+  background: rgba(10, 10, 10, 0.7);
+  backdrop-filter: blur(5px);
+}
+
+.sidebar {
+  width: 350px;
+  height: 100vh;
+  background: rgba(10, 10, 10, 0.8);
+  border-left: 1px solid #00ff41;
+  border-radius: 0;
+  padding: 20px;
+  backdrop-filter: blur(3px);
+  box-shadow: 
+    -10px 0 30px rgba(0, 255, 65, 0.3),
+    inset 0 0 20px rgba(0, 255, 65, 0.1);
+  position: relative;
+  overflow-y: auto;
+  margin: 0;
+}
+
+/* Data Stream Border Effect */
+.sidebar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, #00ff41, transparent);
+  animation: dataStream 3s linear infinite;
+}
+
+@keyframes dataStream {
+  0% { left: -100%; }
+  100% { left: 100%; }
+}
